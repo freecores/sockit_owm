@@ -10,8 +10,7 @@ RTL features:
 - overdrive (untested)
 - power supply (strong pull-up) (untested)
 
-SOPC Builder integration:
-- dividers are computed automaticaly from the system frequency
+SOPC Builder integration
 
 Nios II EDS integration:
 - port of the 1-wire open domain kit version 3.10
