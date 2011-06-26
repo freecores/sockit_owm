@@ -32,8 +32,9 @@
 *                                                                             *
 ******************************************************************************/
 
-
-#include <fcntl.h>
+// this header would be used if a proper file handler could be assidned,
+// but due to global variables in the public domain kit, this is not possible
+//#include <fcntl.h>
 
 #include "sys/alt_dev.h"
 #include "sys/alt_irq.h"
@@ -83,7 +84,7 @@ static void sockit_owm_irq(void * state, alt_u32 id)
 #endif
 {
   // clear onewire interrupts
-  IORD_SOCKIT_OWM (sockit_owm.base);
+  IORD_SOCKIT_OWM_CTL (sockit_owm.base);
   // set the flag indicating a completed 1-wire cycle
   ALT_FLAG_POST (sockit_owm.irq, 0x1, OS_FLAG_SET);
 }
